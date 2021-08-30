@@ -2,6 +2,7 @@
     "name": "sensory5/oc-manual-plugin",
     "description": "Markdown based manual for October CMS",
     "type": "october-plugin",
+    "version": "0.1.1",
     "require": {
         "composer/installers": "~1.5"
     },
