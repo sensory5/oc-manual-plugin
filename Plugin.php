@@ -57,4 +57,24 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Registers backend settings
+     *
+     * @return array[]
+     */
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => 'Manual Settings',
+                'description' => 'Manage the manual configuration.',
+                'category'    => 'Sensory 5',
+                'icon'        => 'icon-file-text',
+                'class'       => 'Sensory5\Manual\Models\Settings',
+                'order'       => 500,
+                'keywords'    => 'settings'
+            ]
+        ];
+    }
+
 }
