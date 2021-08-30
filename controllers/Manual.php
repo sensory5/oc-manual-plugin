@@ -5,7 +5,7 @@ use BackendMenu;
 use Cms\Classes\Theme;
 use Cms\Classes\Content as CmsContent;
 use Backend\Classes\Controller;
-use Sensor5\Manual\Models\Settings;
+use Sensory5\Manual\Models\Settings;
 
 /**
  * Manual Back-end Controller
