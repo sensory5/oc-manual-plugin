@@ -1,0 +1,17 @@
+{
+    "name": "sensory5/oc-manual-plugin",
+    "description": "Markdown based manual for October CMS",
+    "type": "october-plugin",
+    "require": {
+        "composer/installers": "~1.5"
+    },
+    "extra": {
+      "installer-name": "manual"
+    },
+    "authors": [
+        {
+            "name": "Sensory 5",
+            "email": "sysadmin@sensory5.com"
+        }
+    ]
+}
