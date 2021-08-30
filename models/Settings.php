@@ -1,4 +1,4 @@
-<?php namespace Sensory\Manual\Models;
+<?php namespace Sensory5\Manual\Models;
 
 use Model;
 
