@@ -1,0 +1,129 @@
+/* Brand Colors
+
+Green: #7ac142;
+Light-Green: #a7dd7c;
+Dark-Green: #4c9314;
+Black: #000000;
+Grey: #888888;
+
+*/
+
+.s5-manual {
+    padding-bottom: 20px;
+}
+
+.s5-manual-menu {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+.s5-manual-menu > li {
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.s5-manual-menu > .s5-manual-header {
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+
+/* Header Styles */
+.s5-manual h1 {
+  color: #000;
+  margin: 0 0 30px;
+}
+.s5-manual h2 {
+  color: #7ac142;
+  margin: 0 0 20px;
+}
+.s5-manual h3 {
+  color: #000;
+  margin: 20px 0 20px;
+}
+
+/* Text Styles */
+.s5-manual p {
+  font-size: 16px;
+}
+
+.s5-manual hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 0;
+  border-top: 3px solid #eeeeee;
+}
+
+.s5-manual ul {
+  margin: 20px 0 20px 20px;
+  padding-left: 22px;
+}
+.s5-manual ul ul {
+  margin: 0;
+}
+.s5-manual li {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+/* Manual Tables */
+.s5-manual th {
+  font-size: 16px;
+  padding: 10px;
+}
+.s5-manual td {
+  font-size: 16px;
+  padding: 0px 10px 10px;
+}
+
+/* Manual Images */
+.s5-manual .s5-img-hero {
+  margin-bottom: 40px;
+}
+.s5-manual .s5-img {
+  width: 100%;
+}
+.s5-manual .s5-img-full {
+  width: 100%;
+}
+.s5-manual .s5-img-half {
+  width: 50%;
+}
+.s5-manual .s5-img-quarter {
+  width: 25%;
+}
+.s5-manual .s5-img-right {
+  float: right;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.s5-manual .s5-img-left {
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.s5-manual .s5-img-mb {
+  margin-bottom: 20px;
+}
+.s5-manual .s5-img-mt {
+  margin-top: 20px;
+}
+
+
+
+@media print {
+
+    .navbar.control-toolbar {
+        display: none;
+    }
+
+    .s5-manual-sidebar {
+        display: none;
+    }
+
+    body > #layout-canvas > .layout > .layout-row > .layout > .layout-cell:first-child {
+        display: none;
+    }
+
+}

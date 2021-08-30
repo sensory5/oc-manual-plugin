@@ -1,0 +1,15 @@
+<ul class="s5-manual-menu">
+    <?php foreach($contents as $content): ?>
+
+    <?php if (!empty($_manHeader = $this->getCurrentHeader($content))): ?>
+    <li class="s5-manual-header"><?= $_manHeader ?></li>
+    <?php endif; ?>
+
+    <?php if (!is_null($this->currentContentId) && ($content->id == $this->currentContentId)): ?>
+    <li><span><?= $content->title ?></span>
+    <?php else: ?>
+    <li><a href="<?= $content->link ?>"><?= $content->title ?></a></li>
+    <?php endif; ?>
+
+    <?php endforeach ?>
+</ul>

@@ -1,0 +1,32 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('sensory5/manual/manual') ?>">Manual</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php Block::put('form-contents') ?>
+
+    <div class="s5-manual">
+
+        <?= $this->currentContent ?>
+
+    </div>
+
+<?php Block::endput() ?>
+
+<?php Block::put('form-sidebar') ?>
+
+    <div class="s5-manual-sidebar">
+        <h2>Manual Pages</h2>
+        <!-- sidebar -->
+        <?= $this->renderMenu(); ?>
+    </div>
+
+<?php Block::endput() ?>
+
+<!-- Layout execution -->
+<?php Block::put('body') ?>
+    <?= $this->makeLayout('form-with-sidebar') ?>
+</php Block::endput() ?>
+
