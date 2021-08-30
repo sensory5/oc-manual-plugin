@@ -161,7 +161,7 @@ class Manual extends Controller
 
         // sort contents by order id
         usort($contents, function($a, $b) {
-            return ($a->order < $b->order) ? -1 : ($a->order === $b->order) ? 0 : 1;
+            return ($a->order < $b->order) ? -1 : (($a->order === $b->order) ? 0 : 1);
         });
 
         return $this->makePartial('menu', ['contents' => $contents]);
