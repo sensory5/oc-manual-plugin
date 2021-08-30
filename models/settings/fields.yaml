@@ -1,0 +1,10 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    manual_theme:
+        label: The theme the manual exists in.
+        span: left
+        default: manual 
+        description: The October CMS theme where the manual exists under `content/manual`

@@ -1,11 +1,11 @@
 <?php namespace Sensory5\Manual\Controllers;
 
-use Config;
 use Backend;
 use BackendMenu;
 use Cms\Classes\Theme;
 use Cms\Classes\Content as CmsContent;
 use Backend\Classes\Controller;
+use Sensor5\Manual\Models\Settings;
 
 /**
  * Manual Back-end Controller
@@ -172,7 +172,7 @@ class Manual extends Controller
      * Retrieve the proper theme that contains the manual content
      */
     private function getManualTheme() {
-        return Config::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
+        return Settings::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
     }
 
 }
