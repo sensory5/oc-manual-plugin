@@ -43,10 +43,11 @@ class Manual extends Controller
     {
         parent::__construct();
 
+        $theme = Settings::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
         $cssFile = Settings::get('sensory5.manual::css_path', 'plugin');
         $cssFile = $cssFile == 'plugin' ?  
           '/plugins/sensory5/manual/assets/css/manual.css' : 
-          '/themes/ . '$this->getManualTheme() . '/content/manual.css';
+          '/themes/' . $theme . '/content/manual.css';
         $this->addCss($cssFile);
 
         BackendMenu::setContext('Sensory5.Manual', 'site', 'manual');
