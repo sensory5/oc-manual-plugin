@@ -34,11 +34,20 @@ class Manual extends Controller
      */
     public $currentHeaderTitle = '';
 
+    /**
+     * @var string theme
+     */
+    public $theme = null;
+
     public function __construct()
     {
         parent::__construct();
 
-        $this->addCss('/plugins/sensory5/manual/assets/css/manual.css');
+        $cssFile = Settings::get('sensory5.manual::css_path', 'plugin'));
+        $cssFile = $cssFile == 'plugin' ?  
+          '/plugins/sensory5/manual/assets/css/manual.css' : 
+          '/themes/ . '$this->getManualTheme() . '/content/manual.css';
+        $this->addCss($cssFile);
 
         BackendMenu::setContext('Sensory5.Manual', 'site', 'manual');
     }
@@ -49,11 +58,10 @@ class Manual extends Controller
     public function index()
     {
 
-        $theme = $this->getManualTheme();
         $this->pageTitle = 'Site Manual';
 
         try {
-            $content = CmsContent::load($theme, self::CONTENT_DIR.'index.md');
+            $content = CmsContent::load($this->getManualTheme(), self::CONTENT_DIR.'index.md');
 
             if ($content) {
                 $this->currentContentId = null;
@@ -75,11 +83,9 @@ class Manual extends Controller
     public function view($contentId)
     {
 
-        $theme = $this->getManualTheme();
-
         try {
 
-            $content = CmsContent::load($theme, self::CONTENT_DIR.$contentId.'.md');
+            $content = CmsContent::load($this->getManualTheme(), self::CONTENT_DIR.$contentId.'.md');
 
             $this->pageTitle = ucwords(str_replace("-", " ", $contentId));
 
@@ -117,11 +123,9 @@ class Manual extends Controller
 
         $this->currentHeaderTitle = '';
 
-        $theme = $this->getManualTheme();
-
         $self = $this;
 
-        $contents = CmsContent::listInTheme($theme, true)->reduce(function($result, $item) use($self) {
+        $contents = CmsContent::listInTheme($this->getManualTheme(), true)->reduce(function($result, $item) use($self) {
 
             $file = $item->fileName;
 
@@ -172,7 +176,9 @@ class Manual extends Controller
      * Retrieve the proper theme that contains the manual content
      */
     private function getManualTheme() {
-        return Settings::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
+      if (!is_null($this->theme)) {
+        $this->theme = Settings::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
+      }
+      return $this->theme;
     }
-
 }

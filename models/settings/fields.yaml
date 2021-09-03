@@ -8,3 +8,12 @@ fields:
         span: left
         default: manual 
         description: The October CMS theme where the manual exists under `content/manual`
+    css_path:
+        label: CSS Location
+        span: left
+        type: dropdown
+        options: 
+          plugin: Default
+          theme: Theme
+        description: Indicates where to find the css file. Selecting theme will use the theme's content/manual.css file. 
+        
