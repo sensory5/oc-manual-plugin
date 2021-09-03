@@ -43,11 +43,12 @@ class Manual extends Controller
     {
         parent::__construct();
 
-        $theme = Settings::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
-        $cssFile = Settings::get('sensory5.manual::css_path', 'plugin');
+        $theme = Theme::getActiveThemeCode();
+        $cssFile = Settings::get('css_path', 'plugin');
         $cssFile = $cssFile == 'plugin' ?  
           '/plugins/sensory5/manual/assets/css/manual.css' : 
           '/themes/' . $theme . '/assets/manual.css';
+        \Log::info('cssFile: '. $cssFile);
         $this->addCss($cssFile);
 
         BackendMenu::setContext('Sensory5.Manual', 'site', 'manual');
@@ -178,7 +179,7 @@ class Manual extends Controller
      */
     private function getManualTheme() {
       if (is_null($this->theme)) {
-        $this->theme = Settings::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
+        $this->theme = Theme::getActiveThemeCode();
       }
       return $this->theme;
     }
