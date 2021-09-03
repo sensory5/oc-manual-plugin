@@ -177,7 +177,7 @@ class Manual extends Controller
      * Retrieve the proper theme that contains the manual content
      */
     private function getManualTheme() {
-      if (!is_null($this->theme)) {
+      if (is_null($this->theme)) {
         $this->theme = Settings::get('sensory5.manual::manual_theme', Theme::getActiveThemeCode());
       }
       return $this->theme;
